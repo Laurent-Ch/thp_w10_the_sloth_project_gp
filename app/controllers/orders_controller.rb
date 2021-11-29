@@ -13,6 +13,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @picture = Picture.find(params[:picture_id])
+    @amount = (@picture.price*100)
+    @user = current_user
   end
 
   # GET /orders/1/edit
@@ -21,17 +24,27 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
+    @picture = Picture.find(params[:picture_id])
+    @amount = (@picture.price*100)
+    @user = current_user
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: "Order was successfully created." }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    begin
+      customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+      })
+      charge = Stripe::Charge.create({
+      customer: customer.id,
+      amount: @amount,
+      description: "Achat d'un produit",
+      currency: 'eur',
+      })
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_order_path
     end
+    # After the rescue, if the payment succeeded
+
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json
