@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @picture = Picture.find(params[:picture_id])
-    @amount = (@picture.price)
+    @amount = (@picture.price*100)
     @user = current_user
   end
 
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @picture = Picture.find(params[:picture_id])
-    @amount = (@picture.price)
+    @amount = (@picture.price*100)
     @user = current_user
 
     begin
