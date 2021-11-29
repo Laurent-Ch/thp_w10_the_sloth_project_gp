@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tags
   resources :users
+  resources :pictures
+  resources :cards
+  
   resources :pictures do
     resources :orders, only: [:new, :create]
-end
+  end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

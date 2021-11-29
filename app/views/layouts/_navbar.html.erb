@@ -1,12 +1,12 @@
 <navbar>
   <div id= "nb-left-elts">
     <div class="logo nb-elt">The Sloth Project</div>
-    <div class="nb-elt">Accueil</div>
+    <button class="nb-elt"><%= link_to "Accueil", root_path %></button>
   </div>
   <div id= "nb-right-elts">
-    <a class="nb-elt" href="/users/sign_up" role="button">S'inscrire</a>
-    <a class="nb-elt" href="/users/sign_in" role="button">Se connecter</a>
-    <a class="nb-elt" href="/users/edit" role="button">Mon profil</a>
+    <button class="nb-elt"><%= link_to "S'inscrire", new_user_registration_path %></button>
+    <button class="nb-elt"><%= link_to 'Se connecter', new_user_session_path %></button>
+    <button class="nb-elt"><%= link_to 'Mon Panier', cards_path %></button>
     <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
   </div>
 </navbar>
