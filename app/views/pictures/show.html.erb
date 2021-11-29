@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1><%=@picture.title%><h1>
+<img class="" src=<%=@picture.image_url%> alt="another sloth">
+<p>Proposé par <%=@picture.author%></p>
+<p>Au prix de <%=@picture.price%>
+<h3>Plus de détails</h3>
+<p><%=@picture.body%></p>
+<h3>Elle a du succès !</h3>
+<button> <%=@picture_sold_count%>ventes</button>
+<button> Acheter cette photo </button>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+<%# Pas besoin a priori - scaffold %>
+<%# <%= link_to 'Edit', edit_picture_path(@picture) %>
+<%# <%= link_to 'Back', pictures_path %>
