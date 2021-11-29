@@ -6,7 +6,9 @@
 <p><%=@picture.body%></p>
 <h3>Elle a du succès !</h3>
 <button> <%=@picture_sold_count%>ventes</button>
-<button> Acheter cette photo </button>
+
+Formulaire
+<button><%= link_to 'Ajouter à mon panier', new_card_path %></button>
 
 <%# Pas besoin a priori - scaffold %>
 <%# <%= link_to 'Edit', edit_picture_path(@picture) %>

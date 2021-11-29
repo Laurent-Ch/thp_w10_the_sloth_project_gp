@@ -1,0 +1,16 @@
+<tbody>
+  <% @cards.each do |card| %>
+    <tr>
+    <div>
+    <img class="thumbnail" src=<%=card.picture.image_url%>>
+    </div>
+      <td><%= card.picture.title %></td>
+      <td><%= card.picture.price %> euros</td>
+      <button>Supprimer</button>
+      <button>Ajouter</button>
+    </tr>
+  <% end %>
+</tbody>
+
+<button><p><%= link_to 'Continuer mes achats', root_path %></p>
+</button>
