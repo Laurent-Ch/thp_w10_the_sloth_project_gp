@@ -1,13 +1,21 @@
-<navbar>
-  <div id= "nb-left-elts">
-    <div class="logo nb-elt">The Sloth Project</div>
-    <button class="nb-elt"><%= link_to "Accueil", root_path %></button>
-  </div>
-  <div id= "nb-right-elts">
-    <button class="nb-elt"><%= link_to "S'inscrire", new_user_registration_path %></button>
-    <button class="nb-elt"><%= link_to 'Se connecter', new_user_session_path %></button>
-    <button class="nb-elt"><%= link_to 'Mon profil', user_path(current_user.id) %></button>
-    <button class="nb-elt"><%= link_to 'Mon Panier', cards_path %></button>
-    <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
-  </div>
-</navbar>
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <span class="fs-4">The Slot Project</span>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/" class="nav-link px-2 text-secondary">Accueil</a></li>
+            </ul>
+
+            <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-2">
+              <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary me-2" %>
+              <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary me-2" %>
+              <%= link_to "Profil", user_path(current_user.id), class: "btn btn-primary me-2" %>
+              <%= link_to "Mon panier", cards_path, class: "btn btn-primary me-2" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
+            </div>
+          </div>
+      </div>
+</header>
