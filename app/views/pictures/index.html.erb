@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1>Pictures</h1>
-
+<div class="picture-index-content">
 <table>
   <thead>
     <tr>
@@ -12,16 +11,13 @@
 
   <tbody>
     <% @pictures.each do |picture| %>
-      <tr>
-        <td><img src="<%= picture.image_url %>" alt="" /></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="picture-elements">
+        <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Picture', new_picture_path %>
