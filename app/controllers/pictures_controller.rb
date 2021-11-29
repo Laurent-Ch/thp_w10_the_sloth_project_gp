@@ -8,6 +8,12 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1 or /pictures/1.json
   def show
+    @picture = Picture.find(params[:id])
+    #Compter le nombre d'images vendues, à décaler du controller ? 
+    picture_sold = PicturesOrder.where(picture: @picture)
+    if !picture_sold.nil?
+      @picture_sold_count = picture_sold.length
+    end
   end
 
   # GET /pictures/new
@@ -66,4 +72,5 @@ class PicturesController < ApplicationController
     def picture_params
       params.fetch(:picture, {})
     end
+  
 end

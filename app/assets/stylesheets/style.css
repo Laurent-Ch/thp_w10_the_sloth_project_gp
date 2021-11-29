@@ -1,0 +1,17 @@
+/* Navbar */
+navbar {
+  display: flex;
+  background-color: red;
+
+  justify-content: space-between;
+}
+
+#nb-left-elts, #nb-right-elts {
+  display: flex;
+}
+
+.nb-elt {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+

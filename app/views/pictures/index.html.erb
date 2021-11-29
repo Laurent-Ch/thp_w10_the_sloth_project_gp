@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h1>TSP root page, pitures#index</h1>
+
 
 <h1>Pictures</h1>
 
@@ -12,6 +14,7 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
+        <td><img src="<%= picture.image_url %>" alt="" /></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
