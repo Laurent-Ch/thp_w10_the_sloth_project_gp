@@ -5,12 +5,22 @@ class CardsController < ApplicationController
   end
 
   def create
-    @picture = picture.find(params[:id])
-    @card = Card.create(user:current_user, picture: @picture)
+    @picture = Picture.find(params[:id])
+    @card = Card.create(user: current_user, picture: @picture)
   end
 
   def index
     @cards = Card.where(user: current_user)
   end
 
+end
+
+private
+
+def total_price
+  @total_price = 0 
+  Card.where(user: current_user).each do |card|
+  total_price = total_price + card.picture.price 
+  end
+  return @total_price
 end
