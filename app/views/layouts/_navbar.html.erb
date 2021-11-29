@@ -4,8 +4,9 @@
     <div class="nb-elt">Accueil</div>
   </div>
   <div id= "nb-right-elts">
-    <div class="nb-elt">S'inscire</div>
-    <div class="nb-elt">Se connecter</div>
+    <a class="nb-elt" href="/users/sign_up" role="button">S'inscrire</a>
+    <a class="nb-elt" href="/users/sign_in" role="button">Se connecter</a>
+    <a class="nb-elt" href="/users/edit" role="button">Mon profil</a>
     <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
   </div>
 </navbar>
