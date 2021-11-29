@@ -30,6 +30,14 @@ end
     )
   end
 
+  john = User.create(
+    first_name: "John",
+    last_name: "Doe",
+    email: "john.doe@yopmail.com",
+    phone_number: "1234567890",
+    password: "123456",
+  )
+
   50.times do
     tags_picture = TagsPicture.create(
       tag: Tag.all.sample,

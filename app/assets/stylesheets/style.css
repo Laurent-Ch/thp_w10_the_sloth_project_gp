@@ -15,3 +15,8 @@ navbar {
   margin-right: 15px;
 }
 
+.thumbnail {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
