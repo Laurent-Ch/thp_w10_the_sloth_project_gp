@@ -7,9 +7,8 @@
 <h3>Elle a du succès !</h3>
 <button> <%=@picture_sold_count%>ventes</button>
 
-Formulaire
-<button><%= link_to 'Ajouter à mon panier', new_card_path %></button>
-
+<%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
+Compteur : <%= Card.where(user: current_user, picture: @picture).length %>
 <%# Pas besoin a priori - scaffold %>
 <%# <%= link_to 'Edit', edit_picture_path(@picture) %>
 <%# <%= link_to 'Back', pictures_path %>

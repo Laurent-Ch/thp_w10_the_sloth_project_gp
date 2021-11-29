@@ -6,11 +6,14 @@
     </div>
       <td><%= card.picture.title %></td>
       <td><%= card.picture.price %> euros</td>
+      Quantité : <%= Card.where(user: current_user, picture: card.picture.id).length %>
       <button>Supprimer</button>
       <button>Ajouter</button>
     </tr>
   <% end %>
 </tbody>
+Total quantité : <%= Card.where(user: current_user).length %>
+Total achat : <%=  %>
 
 <button><p><%= link_to 'Continuer mes achats', root_path %></p>
 </button>
