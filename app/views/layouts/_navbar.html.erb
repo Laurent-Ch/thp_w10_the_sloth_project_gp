@@ -12,7 +12,9 @@
             <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-2">
               <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary me-2" %>
               <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary me-2" %>
-              <%= link_to "Profil", user_path(current_user.id), class: "btn btn-primary me-2" %>
+              <% if user_signed_in? %>
+                <%= link_to "Profil", user_path(current_user.id), class: "btn btn-primary me-2" %>
+              <% end %>
               <%= link_to "Mon panier", cards_path, class: "btn btn-primary me-2" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
             </div>
