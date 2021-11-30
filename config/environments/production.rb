@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Heroku 2nd attempt.
-  config.action_mailer.default_url_options = { host: 'https://the-sloth-project.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://the-sloth-project.herokuapp.com/' }
 end
