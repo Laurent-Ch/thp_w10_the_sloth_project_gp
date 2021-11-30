@@ -20,8 +20,8 @@
   </thead>
 
   <tbody>
+  	<% @tag.pictures.each do |picture| %>
     <% @tagspicture = TagsPicture.where(picture: picture) %>
-        <% @tagspicture.each do |picture| %>
       <tr class="picture-elements">
         <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
         <% @tagspicture.each do |tagpicture| %>
