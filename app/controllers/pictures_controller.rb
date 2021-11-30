@@ -5,9 +5,9 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
     @tags = Tag.all
-    tag_ids = params[:id]
-    print "$"*50
-    print tag_ids
+    # tag_ids = params[:id]
+    # print "$"*50
+    # print tag_ids
   end
 
   # GET /pictures/1 or /pictures/1.json
