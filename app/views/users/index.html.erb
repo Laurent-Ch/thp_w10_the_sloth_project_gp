@@ -1,25 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="banner-lg">
+  <div>
+    <h1 class="display-4">The Sloth Project</h1>
+    <button class="btn btn-secondary"><%= link_to 'Découvrez tous nos paresseux', pictures_path %></button>
+  </div>
+</div>
 
-<h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div>
+<span style="font-size: 3em">
+  <i class="fas fa-cat"></i>
+</span>
+  <p>Marre des chatons mignons ? Bienvenue dans le monde des paresseux</p>
+  <i>“Dans le monde idéal, les paresseux donneront des cours de relaxation.”</i>
+</div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div>
+<span style="font-size: 3em">
+  <i class="fas fa-camera-retro"></i>
+</span>
+  <p>De Tombuktu à Paris, des photographies d'exception</p>
+  <i>Qui ont su saisir nos paresseux sur l'instant</i>
+</div>
 
-<br>
+<div>
+<span style="font-size: 3em">
+  <i class="fas fa-bed"></i>
+</span>
+  <p>Une équipe de flemmards à votre service</p>
+  <i>Pour le meilleur et pour le pire </i>
+</div>
 
-<%= link_to 'New User', new_user_path %>
+<div>
+<span style="font-size: 3em">
+  <i class="fas fa-bed"></i>
+</span>
+  <p>Choisissez, achetez : un fonctionnement simplissime</p>
+  <i>The Sloth Project, le e-commerce aussi flemmarde que vous </i>
+</div>
+
+<h1>Ils ont sauté le pas !</h1>
+<div>
+<%= @users.sample.first_name%> <%= @users.sample.last_name%>
+"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore ! "
+</div>
+
+<div>
+<%= @users.sample.first_name%> <%= @users.sample.last_name%>
+"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore ! "
+</div>
