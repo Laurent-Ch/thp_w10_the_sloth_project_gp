@@ -48,7 +48,7 @@ img:hover {
   justify-content: center;
 }
 
-.banner-lg {
+.banner-lg-1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,6 +58,22 @@ img:hover {
   width: 100%;
   height: 75vh;
 }
+
+.banner-lg-2 {
+  background-size: cover;
+  background-image: url('https://www.science-et-vie.com/var/scienceetvie/storage/images/media/images/galerie/2017-02-17-diaporama-admirez-les-plus-belles-images-du-film-planete-animale/paresseux-nain-escudo-de-veraguas-panama/33504-5-fre-FR/Paresseux-nain-Escudo-de-Veraguas-Panama.jpg?alias=original');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+  height: 75vh;
+}
+
+.feedback-elements {
+  margin: 25px;
+  text-align: center;
+  }
 
 .intro-elements {
   margin: 25px;
