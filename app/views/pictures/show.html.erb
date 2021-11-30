@@ -1,14 +1,16 @@
 <h1><%=@picture.title%><h1>
 <img class="" src=<%=@picture.image_url%> alt="another sloth">
+<% @tagspicture.each do |tagpicture| %>
+  <div>
+  <button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button>
+  </div>
+<% end %>
 <p>Proposé par <%=@picture.author%></p>
 <p>Au prix de <%=@picture.price%>
 <h3>Plus de détails</h3>
 <p><%=@picture.body%></p>
 <h3>Elle a du succès !</h3>
 <button> <%=@picture_sold_count%>ventes</button>
-    <% @tagspicture.each do |tagpicture| %>
-      <button><%= tagpicture.tag.title %></button>
-    <% end %>
 
 <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
 Compteur : <%= Card.where(user: current_user, picture: @picture).length %>
