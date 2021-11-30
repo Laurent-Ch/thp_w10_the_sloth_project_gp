@@ -12,5 +12,3 @@ Laurent : Sloth level 3
 Antoine : Sloth lever 2
 
 ## Useful links
-
-
