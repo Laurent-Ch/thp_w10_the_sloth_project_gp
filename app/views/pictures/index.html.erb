@@ -1,9 +1,8 @@
   <nav class="py-2 bg-light border-bottom border-top">
     <div class="container d-flex justify-content-center">
       <ul class="nav">
-        <li class="nav-item"><a href="" class="pe-none nav-link link-dark px-2 active" aria-current="page">Filtrer par tags :</a></li>
         <% @tags.each do |tag|%>
-          <li class="nav-item"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
+          <li class="btn btn-sm btn-danger mx-2"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
         <% end %>
       </ul>
     </div>
