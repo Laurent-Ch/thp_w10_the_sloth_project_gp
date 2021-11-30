@@ -1,9 +1,36 @@
+  <nav class="py-2 bg-light border-bottom border-top">
+    <div class="container d-flex justify-content-center">
+      <ul class="nav">
+        <li class="nav-item"><a href="" class="pe-none nav-link link-dark px-2 active" aria-current="page">Filtrer par tags :</a></li>
+        <% @tags.each do |tag|%>
+          <li class="nav-item"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 
 <div class="container my-4">
-<h2> Filtrer ma recherche </h2>
-  <% @tags.each do |tag| %>
-    <%= check_box_tag 'tag.id'%> <%=tag.title%>
+  
+<!--   <%= form_for pictures_path, method: 'get' do |f| %>
+    <div class="field">
+      <% @tags.each do |tag| %>
+        <%= f.label "#{tag.title}" %>
+        <%= f.check_box :search_id, {}, tag.id, '' %>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Trier" %>
+    </div>
   <% end %>
+  <ul>
+  <% @tags.each do |tag| %>
+      <li>
+        <%= check_box_tag 'search_ids[]', tag.id -%>
+        <%= h tag.title -%>
+      </li>
+  <% end %>
+  </ul> -->
+
 </div>
 
 <div class="picture-index-content">
