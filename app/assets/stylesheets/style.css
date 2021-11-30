@@ -47,3 +47,14 @@ img:hover {
   align-items: center;
   justify-content: center;
 }
+
+.banner-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: url('https://medias.pourlascience.fr/api/v1/images/view/5d42f3f7d286c24fde2a84a8/wide_1300/image.jpg');
+  color: #fff;
+  width: 100%;
+  height: 75vh;
+}
