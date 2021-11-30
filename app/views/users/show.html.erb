@@ -1,15 +1,32 @@
-<p>Ton profil</p>
-<br />
-<!-- THis will be put in a proper form later -->
-<%= current_user.first_name %>
-<br />
-<%= current_user.last_name %>
-<br />
-<%= current_user.email%>
-<br />
-<%= current_user.phone_number %>
-<br />
-<br />
-
-<%= link_to 'Edit', edit_user_registration_path %> |
-<%= link_to 'Back', root_path %>
+<div class="container d-flex py-5">
+	<div class="col-4 d-flex justify-content-end align-content-center">
+		<img src="https://media.gettyimages.com/photos/woman-holds-a-juvenile-sloth-picture-id532998444?k=20&m=532998444&s=612x612&w=0&h=bJcAV_4wkECT6E4BFk1qximpYA7Uq9X_PbvoRDVD3LU=" alt="mdo" width="220" height="220" class="rounded-circle">
+	</div>
+	<div class="col-8 my-auto py-auto">
+		<div class="ms-3 mb-2 align-middle">
+			<span class="fs-2 fw-bold">Mon profil</span>
+			<div class="ms-3 d-inline">
+				<%= link_to 'Edit', edit_user_registration_path, class: "btn-sm btn-outline-secondary my-auto" %>
+			</div>
+		</div>
+		<div class="ms-4">
+			<p><%= current_user.first_name %></p>
+			<p><%= current_user.last_name %></p>
+			<p><%= current_user.email%></p>
+			<p><%= current_user.phone_number %></p>
+			<%= link_to 'Back', root_path, class: "btn-sm btn-outline-secondary" %>
+		</div>
+	</div>
+</div>
+<div class="border-bottom text-center pb-2">
+	<span class="fs-4 fw-bold">Mes photos</span>
+</div>
+<% if @user.pictures.length > 0 %>
+<div class="container">
+	<% @user.pictures.each do |picture| %>
+      <tr class="picture-elements">
+        <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
+      </tr>
+    <% end %>
+</div>
+<% end %>
