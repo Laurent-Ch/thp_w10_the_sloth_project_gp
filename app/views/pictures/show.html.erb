@@ -1,5 +1,10 @@
 <h1><%=@picture.title%><h1>
 <img class="" src=<%=@picture.image_url%> alt="another sloth">
+<% @tagspicture.each do |tagpicture| %>
+  <div>
+  <button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button>
+  </div>
+<% end %>
 <p>Proposé par <%=@picture.author%></p>
 <p>Au prix de <%=@picture.price%>
 <h3>Plus de détails</h3>
