@@ -19,7 +19,7 @@ pictureArray = ["https://www.rd.com/wp-content/uploads/2021/04/GettyImages-86300
 
 10.times do
   tag = Tag.create(
-    title: Faker::Color.unique.color_name,
+    title: Faker::Artist.unique.name,
   )
 end
 
