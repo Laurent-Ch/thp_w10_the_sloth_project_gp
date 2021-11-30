@@ -8,8 +8,8 @@ class TagsController < ApplicationController
 
   # GET /tags/1 or /tags/1.json
   def show
-    @tags = Tag.find(params[:id])
-    @tags_all = Tag.all
+    @tag = Tag.find(params[:id])
+    @tags = Tag.all
   end
 
   # GET /tags/new

@@ -1,10 +1,10 @@
 	<nav class="py-2 bg-light border-bottom border-top">
     <div class="container d-flex justify-content-center">
-      <ul class="nav">
-      	<li class="nav-item"><a href="" class="pe-none nav-link link-dark px-2 active" aria-current="page">Filtrer par tags :</a></li>
-      	<% @tags_all.each do |tag|%>
-        	<li class="nav-item"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
+        <ul class="nav">
+        <% @tags.each do |tag|%>
+        <li class="btn btn-sm btn-danger mx-2"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
         <% end %>
+      </ul>
       </ul>
     </div>
   </nav>
@@ -20,8 +20,8 @@
   </thead>
 
   <tbody>
-    <% @tags.pictures.each do |picture| %>
     <% @tagspicture = TagsPicture.where(picture: picture) %>
+        <% @tagspicture.each do |picture| %>
       <tr class="picture-elements">
         <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
         <% @tagspicture.each do |tagpicture| %>
@@ -33,5 +33,3 @@
 </table>
 </div>
 <br>
-
-<%= link_to 'New Picture', new_picture_path %>
