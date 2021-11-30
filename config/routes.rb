@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :pictures
   resources :cards
-  
+  resources :team, only: [:index]
+  resources :faq, only: [:index]
   resources :pictures do
     resources :orders, only: [:new, :create]
   end
