@@ -9,6 +9,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1 or /pictures/1.json
   def show
     @picture = Picture.find(params[:id])
+    @tagspicture = TagsPicture.where(picture: @picture)
     #Compter le nombre d'images vendues, à décaler du controller ? 
     picture_sold = PicturesOrder.where(picture: @picture)
     if !picture_sold.nil?

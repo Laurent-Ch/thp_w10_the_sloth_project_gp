@@ -58,3 +58,15 @@ img:hover {
   width: 100%;
   height: 75vh;
 }
+
+.intro-elements {
+  margin: 25px;
+  text-align: center;
+  }
+
+.intro-index-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,24 +1,14 @@
-# README
+# The Sloth Project
+_A e-commerce platform dedicated to Sloth_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*insert pictures
 
-Things you may want to cover:
+## Main Features
 
-* Ruby version
+## The team
 
-* System dependencies
+Laurent : Sloth level 3
 
-* Configuration
+Antoine : Sloth lever 2
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Useful links
