@@ -1,7 +1,7 @@
-<header class="p-3 bg-dark text-white">
+<header class="p-3 bg-light text-dark">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="/" class="d-flex align-items-center mb-2 me-2 mb-lg-0 text-dark text-decoration-none">
               <span class="fs-4">The Slot Project</span>
             </a>
 
@@ -10,13 +10,18 @@
             </ul>
 
             <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-2">
-              <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary me-2" %>
-              <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary me-2" %>
               <% if user_signed_in? %>
                 <%= link_to "Profil", user_path(current_user.id), class: "btn btn-primary me-2" %>
+                <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
+                <a href="/cards" class="btn btn-outline-dark me-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 17 17">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                  </svg>
+                </a>
+              <% else %>
+                <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-outline-primary me-2" %>
+                <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary me-2" %>
               <% end %>
-              <%= link_to "Mon panier", cards_path, class: "btn btn-primary me-2" %>
-              <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
             </div>
           </div>
       </div>
