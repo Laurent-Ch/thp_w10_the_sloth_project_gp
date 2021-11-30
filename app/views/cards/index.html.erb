@@ -12,8 +12,19 @@
     </tr>
   <% end %>
 </tbody>
+<br>
+
 Total quantité : <%= Card.where(user: current_user).length %>
-Total achat : <%=  %>
+Total achat : <%= session[:amount] %>
+
+<%= button_to "Acheter", {:controller => "orders", :action => 'create', :amount => session[:amount] }, :method => :post, class: "btn btn-danger" %>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+data-description="Achat d'un produit"
+data-amount=<%= @stripe_amount %>
+data-currency="eur"
+data-locale="auto"></script>
 
 <button><p><%= link_to 'Continuer mes achats', root_path %></p>
 </button>

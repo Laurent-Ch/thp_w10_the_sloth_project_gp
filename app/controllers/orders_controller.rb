@@ -13,9 +13,8 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
-    @picture = Picture.find(params[:picture_id])
-    @amount = (@picture.price*100)
-    @user = current_user
+    @amount = session[:amount]*100
+
   end
 
   # GET /orders/1/edit
@@ -24,8 +23,7 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @picture = Picture.find(params[:picture_id])
-    @amount = (@picture.price*100)
+    @amount = session[:amount]*100
     @user = current_user
 
     begin
@@ -47,27 +45,7 @@ class OrdersController < ApplicationController
 
   end
 
-  # PATCH/PUT /orders/1 or /orders/1.json
-  def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: "Order was successfully updated." }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
-  # DELETE /orders/1 or /orders/1.json
-  def destroy
-    @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
