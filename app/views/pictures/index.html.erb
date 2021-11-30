@@ -1,8 +1,8 @@
 
-<div>
+<div class="container my-4">
 <h2> Filtrer ma recherche </h2>
   <% @tags.each do |tag| %>
-    <%= check_box_tag "Tag", 'no', id:"tag" %> <%=tag.title%>
+    <%= check_box_tag 'tag.id'%> <%=tag.title%>
   <% end %>
 </div>
 
@@ -14,17 +14,13 @@
     </tr>
   </thead>
 
-  
-
   <tbody>
     <% @pictures.each do |picture| %>
+    <% @tagspicture = TagsPicture.where(picture: picture) %>
       <tr class="picture-elements">
         <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
-        <% @tagspicture = TagsPicture.where(picture: picture) %>
         <% @tagspicture.each do |tagpicture| %>
-          <div>
-          <button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button>
-          </div>
+          <p><button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button></p>
         <% end %>
       </tr>
     <% end %>

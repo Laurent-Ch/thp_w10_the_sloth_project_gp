@@ -5,13 +5,16 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
     @tags = Tag.all
+    tag_ids = params[:id]
+    print "$"*50
+    print tag_ids
   end
 
   # GET /pictures/1 or /pictures/1.json
   def show
     @picture = Picture.find(params[:id])
     @tagspicture = TagsPicture.where(picture: @picture)
-    #Compter le nombre d'images vendues, à décaler du controller ? 
+
     picture_sold = PicturesOrder.where(picture: @picture)
     if !picture_sold.nil?
       @picture_sold_count = picture_sold.length
