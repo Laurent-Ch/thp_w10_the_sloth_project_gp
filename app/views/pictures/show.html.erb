@@ -1,19 +1,51 @@
-<h1><%=@picture.title%><h1>
-<img class="" src=<%=@picture.image_url%> alt="another sloth">
-<% @tagspicture.each do |tagpicture| %>
-  <div>
-  <button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button>
-  </div>
-<% end %>
-<p>Proposé par <%=@picture.author%></p>
-<p>Au prix de <%=@picture.price%>
-<h3>Plus de détails</h3>
-<p><%=@picture.body%></p>
-<h3>Elle a du succès !</h3>
-<button> <%=@picture_sold_count%>ventes</button>
 
-<%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
-Compteur : <%= Card.where(user: current_user, picture: @picture).length %>
-<%# Pas besoin a priori - scaffold %>
-<%# <%= link_to 'Edit', edit_picture_path(@picture) %>
-<%# <%= link_to 'Back', pictures_path %>
+<div class="picture-show-main">
+  <div class="picture-show-main-left">
+    <img class="picture-show-main-picture" src=<%=@picture.image_url%> alt="another sloth">
+    <div class="picture-show-main-thumb">
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+    </div>
+  </div>
+  <div class="picture-show-main-right">
+    <div class="picture-show-main-right-desc">
+      <% @tagspicture.each do |tagpicture| %>
+      <div>
+      <button class="btn mb-3 btn-sm"><%= tagpicture.tag.title %></button>
+      </div>
+      <% end %>
+      <h1><%=@picture.title%><h1>
+      <p class="picture-show-body"><%=@picture.body%></p>
+    </div>
+    <div class="picture-show-main-right-options"
+      <p><%=@picture_sold_count%> ventes</p>
+      <select id="pictures-format" name="pictures-format">
+        <option value="JPG">JPG</option>
+        <option value="RAW">RAW</option>
+        <option value="PDF">PDF</option>
+      </select>
+      <p><%=@picture.price%>€</p>
+      <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+<div class="picture-show-more">
+  <div class="picture-show-more-desc">
+    <br>
+      <h1>A propos de la photo</h1>
+      <h2>Proposé par <%=@picture.author%></h2>
+      <p> Lorem officia sint in ut eu. Ea dolor aliqua occaecat eu amet irure dolor dolore. Commodo adipisicing culpa ullamco labore ipsum eu incididunt est eiusmod. Lorem et ipsum adipisicing incididunt aute nisi est elit labore.</p>
+      <p>Compteur : <%= Card.where(user: current_user, picture: @picture).length %></p>
+  </div>
+  <div class="picture-show-more-related">
+      <br>
+      <h1>Recommandations</h1>
+      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+    </div>
+</div>
+
+
+
