@@ -1,16 +1,8 @@
-  <nav class="py-2 bg-light border-bottom border-top">
-    <div class="container d-flex justify-content-center">
-      <ul class="nav">
-        <% @tags.each do |tag|%>
-          <li class="btn-tag btn-sm btn-outline-warning mx-2"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
+<%= render 'layouts/tagbar'%>
 
-<div class="container my-4">
+<!-- <div class="container my-4">
 
-<!--   <%= form_for pictures_path, method: 'get' do |f| %>
+  <%= form_for pictures_path, method: 'get' do |f| %>
     <div class="field">
       <% @tags.each do |tag| %>
         <%= f.label "#{tag.title}" %>
@@ -28,11 +20,11 @@
         <%= h tag.title -%>
       </li>
   <% end %>
-  </ul> -->
+  </ul>
 
-</div>
+</div> -->
 
-<div class="picture-index-content">
+<!-- <div class="picture-index-content">
 <table>
   <thead>
     <tr>
@@ -42,23 +34,11 @@
 
   <tbody>
     <% @pictures.each do |picture| %>
-    <% @tagspicture = TagsPicture.where(picture: picture) %>
-      <div class="picture-elements">
-        <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", class = "img-home", style="width: 300px; height: 337px; object-fit: cover;"/>
-        <% @tagspicture.each do |tagpicture| %>
-          <p><button class="btn mb-3 btn-sm btn-info"><%= tagpicture.tag.title %></button></p>
-        <% end %>
+      <div class="picture-elements">eight: 100%; object-fit: cover;"/>
         </a>
       </div>
     <% end %>
   </tbody>
-</table>
-</div>
-<br>
+</table> -->
 
-<div class="banner-lg-1">
-  <div>
-    <h1 class="display-4">The Sloth Project</h1>
-    <%= link_to 'Découvrez tous nos paresseux', pictures_path, class: "btn btn-lg btn-primary" %>
-  </div>
-</div>
+<%= render 'cards' %>

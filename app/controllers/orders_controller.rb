@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @amount = session[:amount]*100
-
   end
 
   # GET /orders/1/edit
