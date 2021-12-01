@@ -1,7 +1,6 @@
 <%= render 'pictures/double_navbar' %>
 
-<!-- <div class="container my-4">
-
+<div class="container my-4">
 
 <div class="picture-index-content">
 <table>
@@ -11,8 +10,8 @@
     </tr>
   </thead>
 
-  <tbody>
-  	<% @tag.pictures.each do |picture| %>
+<tbody>
+  <% @tag.pictures.each do |picture| %>
     <% @tagspicture = TagsPicture.where(picture: picture) %>
       <tr class="picture-elements">
         <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>

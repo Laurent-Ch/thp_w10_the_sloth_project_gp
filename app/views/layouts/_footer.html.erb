@@ -2,9 +2,9 @@
   <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 container  pt-2 mt-3">
     <p class="col-md-4 mb-0 text-muted">© 2021 The Sloth Project, Inc</p>
 
-    <ul class="nav col-md-4 justify-content-end">
-      <li class="footer-item"><%= link_to "L'équipe", team_index_path %></li>
-      <li class="footer-item"><%= link_to "FAQ", faq_index_path %></li>
-    </ul>
+    <div class="nav col-md-4 justify-content-end">
+      <%= link_to "L'équipe", team_index_path, class: "btn btn-outline-danger me-2" %>
+      <%= link_to "FAQ", faq_index_path, class: "btn btn-outline-danger me-2" %>
+    </div>
   </div>
   </footer>
