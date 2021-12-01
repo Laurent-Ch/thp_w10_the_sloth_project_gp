@@ -3,7 +3,7 @@
 		<%if @user.avatar.attached?%>
   		<%= image_tag @user.avatar, alt: 'avatar', width: "220", height: "220", class: "rounded-circle" %>
 		<%else%>
-  		<p>=== Vous n'avez pas encore d'avatar ===</p>
+  		<img src="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?b=1&k=20&m=1300845620&s=170667a&w=0&h=JbOeyFgAc6-3jmptv6mzXpGcAd_8xqkQa_oUK2viFr8=", alt="avatar", width="220", height="220", class="rounded-circle">
 		<%end%>
 </div>
 	<div class="col-8 my-auto py-auto">
@@ -31,11 +31,7 @@
 	<span class="fs-4 fw-bold">Mes photos</span>
 </div>
 <% if @user.pictures.length > 0 %>
-<div class="container">
-	<% @user.pictures.each do |picture| %>
-      <tr class="picture-elements">
-        <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 300px; height: 337px; object-fit: cover;"/></a>
-      </tr>
-    <% end %>
-</div>
+	<div class="container">
+		<%= render 'pictures/cards' %>
+	</div>
 <% end %>
