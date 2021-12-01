@@ -1,0 +1,14 @@
+<div class="row">
+  <% @pictures.each do |picture| %>
+    <div class="col-3 p-0" style="height: 45vh;">
+      <a href="/pictures/<%= picture.id %>">
+      <div class="hover hover-2 text-white" style="width: 100%; height: 100%;"><img style="width: 100%; height: 100%; object-fit: cover;" src="<%= picture.image_url %>" alt="">
+        <div class="hover-overlay"></div>
+        <div class="hover-2-content px-5 py-4">
+          <h5 class="hover-2-description text-uppercase font-weight-bold mb-0"><%= picture.title %></h5>
+        </div>
+      </div>
+    </a>
+    </div>
+  <% end %>
+</div>
