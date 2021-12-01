@@ -24,4 +24,8 @@ def total_price
   @total_price = @total_price + card.picture.price
   end
   return @total_price
+
 end
+
+
+
