@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div class="container-fluid">
+    <h1>Ô <%= @user.first_name %>, merci pour ton achat</h1>
+    <p>
+      Tu viens de réaliser une commande sur <%= link_to "The Sloth Project", @url %> et nous t'en remercions &#128536;
+    </p>
+    <p>
+      Tu retrouveras tes photos ici :
+
+      <% @pictures.each do |picture|%>
+      <h6><a class="font-weight-light text-decoration: none" href=<%= picture.image_url %>><%= picture.title %></a>
+      <% end %>
+    </p>
+    <p> À très vite sur <%= link_to "The Sloth Project", @url %> !</p>
+    <p style="font-size: 1em">L'équipe TSP &#129445;</p>
+    </div>
+  </body>
+</html>

@@ -9,7 +9,7 @@ pictures_array = ["https://www.rd.com/wp-content/uploads/2021/04/GettyImages-863
 
 tags_array =['joueur', 'naturel', 'séducteur', 'jungle', 'prédateur', 'urbain', 'énergique', 'félix', 'perplexifiant', 'chaton']
 
-50.times do
+52.times do
     picture = Picture.create(
       title: Faker::Music::Hiphop.artist,
       body: Faker::Quote.famous_last_words,
@@ -24,16 +24,6 @@ tags_array =['joueur', 'naturel', 'séducteur', 'jungle', 'prédateur', 'urbain'
     title: tags_array[i],
   )
 end
-
-50.times do
-    user = User.create(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-      password: Faker::Internet.password(min_length: 8),
-    )
-  end
 
   john = User.create(
     first_name: "John",

@@ -14,8 +14,6 @@ class CardsController < ApplicationController
     session[:amount] = total_price
   end
 
-end
-
 private
 
 def total_price
@@ -25,3 +23,8 @@ def total_price
   end
   return @total_price
 end
+
+end
+
+
+

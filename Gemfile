@@ -72,4 +72,6 @@ gem 'stripe'
 gem 'rubocop'
 gem 'rubocop-rails'
 
+gem 'nokogiri'
 
+gem 'mailjet'
