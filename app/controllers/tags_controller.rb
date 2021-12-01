@@ -10,6 +10,7 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
     @tags = Tag.all
+    @pictures = @tag.pictures
   end
 
   # GET /tags/new
