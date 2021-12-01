@@ -1,32 +1,36 @@
 
 <div class="picture-show-main">
   <div class="picture-show-main-left">
-    <img class="picture-show-main-picture" src=<%=@picture.image_url%> alt="another sloth">
+    <img class="picture-show-main-picture" src=<%=@picture.image_url%> alt="another sloth" style="width: 612px; height: 408px; max-width:100%; max-height:100%; object-fit: cover;" >
     <div class="picture-show-main-thumb">
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
     </div>
   </div>
   <div class="picture-show-main-right">
     <div class="picture-show-main-right-desc">
-      <% @tagspicture.each do |tagpicture| %>
-      <div>
-      <button class="btn mb-3 btn-sm"><%= tagpicture.tag.title %></button>
-      </div>
-      <% end %>
       <h1><%=@picture.title%><h1>
       <p class="picture-show-body"><%=@picture.body%></p>
     </div>
+    <h1><%=@picture.price%>€</h1>
     <div class="picture-show-main-right-options"
-      <p><%=@picture_sold_count%> ventes</p>
-      <select id="pictures-format" name="pictures-format">
-        <option value="JPG">JPG</option>
-        <option value="RAW">RAW</option>
-        <option value="PDF">PDF</option>
-      </select>
-      <p><%=@picture.price%>€</p>
+      <div class="picture-show-main-right-format">
+        <select id="pictures-format" name="pictures-format">
+          <option value="JPG">JPG</option>
+          <option value="RAW">RAW</option>
+          <option value="PDF">PDF</option>
+        </select>
+      </div>
+      <br>
       <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
+      <p id="picture-sold" style="font-size: 12px ; padding-top: 2px"><%=@picture_sold_count%> ventes déjà réalisées!</p>
+      <br>
+      <% @tagspicture.each do |tagpicture| %>
+        <div>
+        <button class="btn mb-3 btn-sm btn-light"><%= tagpicture.tag.title %></button>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
@@ -36,6 +40,7 @@
       <h1>A propos de la photo</h1>
       <h2>Proposé par <%=@picture.author%></h2>
       <p> Lorem officia sint in ut eu. Ea dolor aliqua occaecat eu amet irure dolor dolore. Commodo adipisicing culpa ullamco labore ipsum eu incididunt est eiusmod. Lorem et ipsum adipisicing incididunt aute nisi est elit labore.</p>
+      <p> Nisi enim aute voluptate magna consectetur. Esse ex velit pariatur in est magna ut velit veniam tempor aliquip non Lorem dolor. Lorem magna do cupidatat velit cupidatat nisi minim exercitation tempor ad ipsum mollit.<p>
       <p>Compteur : <%= Card.where(user: current_user, picture: @picture).length %></p>
   </div>
   <div class="picture-show-more-related">
