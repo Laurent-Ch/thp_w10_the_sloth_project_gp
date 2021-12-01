@@ -230,3 +230,13 @@ p#picture-sold {
 .hover-2:hover .hover-overlay {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
 }
+
+.stripe-button-el { display: none }
+
+.order-recap {
+  margin-left: 50px;
+  padding: 30px;
+  padding-bottom: 500px;
+  display: flex;
+
+}
