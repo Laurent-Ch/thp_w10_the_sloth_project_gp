@@ -9,13 +9,12 @@
       Tu viens de réaliser une commande sur <%= @url %> et nous t'en remercions.
     </p>
     <p>
-      Tu retrouveras les photo ici :
+      Tu retrouveras les photos ici :
       <% @pictures.each do |picture|%>
       <h6>Lien vers <%= picture.title %></h6> <%= picture.image_url %>
     </p>
     <p>
       Rendez-vous <%= @url %> pour découvrir toutes nos photos dénichées par notre équipe de passionnés.
-
     </p>
     <p> À très vite sur the-sloth-project !</p>
     <p> L'équipe TSP</p>
