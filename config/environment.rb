@@ -4,13 +4,27 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-ActionMailer::Base.smtp_settings = {
-    :user_name => 'apikey',
-    # Source : https://stackoverflow.com/questions/30226176/ruby-on-rails-bad-username-password-535-auth-failed
-    :password => ENV['SENDGRID_PWD'],
-    :domain => 'https://the-sloth-project.herokuapp.com/',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-}
+require 'mailjet'
+Mailjet.configure do |config|
+config.api_key = ENV['MAILJET-LOGIN']
+config.secret_key = ENV['MAILJET-PWD']
+config.api_version = "v3.1"
+end
+variable = Mailjet::Send.create(messages: [{
+  'From'=> {
+    'Email'=> 'chamouleau.laurent@gmail.com',
+    'Name'=> 'Laurent'
+  },
+  'To'=> [
+    {
+      'Email'=> 'chamouleau.laurent@gmail.com',
+      'Name'=> 'Laurent'
+    }
+  ],
+  'Subject'=> 'Greetings from Mailjet.',
+  'TextPart'=> 'My first Mailjet email',
+  'HTMLPart'=> '<h3>Dear passenger 1, welcome to <a href=\'https://www.mailjet.com/\'>Mailjet</a>!</h3><br />May the delivery force be with you!',
+  'CustomID' => 'AppGettingStartedTest'
+}]
+)
+p variable.attributes['Messages']
