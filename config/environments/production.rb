@@ -95,6 +95,6 @@ Rails.application.configure do
   # Heroku 2nd attempt.
   config.action_mailer.default_url_options = { host: 'https://the-sloth-project.herokuapp.com/' }
 
-  config.action_mailer.smtp_settings = get_smtp_setting.symbolize_keys
+  # config.action_mailer.smtp_settings = get_smtp_setting.symbolize_keys
 
 end
