@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   resources :faq, only: [:index]
   resources :pictures
   resources :orders, only: [:new, :create]
-
   resources :home, only: [:index]
+  
+  resources :users, only: [:show] do
+    resources :avatars, only: [:create]
+  end
 
 end
