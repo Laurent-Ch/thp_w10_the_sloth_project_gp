@@ -25,16 +25,6 @@ tags_array =['joueur', 'naturel', 'séducteur', 'jungle', 'prédateur', 'urbain'
   )
 end
 
-50.times do
-    user = User.create(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      phone_number: Faker::PhoneNumber.cell_phone_in_e164, 
-      password: Faker::Internet.password(min_length: 8),
-    )
-  end
-
   john = User.create(
     first_name: "John",
     last_name: "Doe",
