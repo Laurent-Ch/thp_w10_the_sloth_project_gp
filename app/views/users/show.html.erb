@@ -1,7 +1,11 @@
 <div class="container d-flex py-5">
 	<div class="col-4 d-flex justify-content-end align-content-center">
-		<img src="https://media.gettyimages.com/photos/woman-holds-a-juvenile-sloth-picture-id532998444?k=20&m=532998444&s=612x612&w=0&h=bJcAV_4wkECT6E4BFk1qximpYA7Uq9X_PbvoRDVD3LU=" alt="mdo" width="220" height="220" class="rounded-circle">
-	</div>
+		<%if @user.avatar.attached?%>
+  		<%= image_tag @user.avatar, alt: 'avatar', width: "220", height: "220", class: "rounded-circle" %>
+		<%else%>
+  		<p>=== Vous n'avez pas encore d'avatar ===</p>
+		<%end%>
+</div>
 	<div class="col-8 my-auto py-auto">
 		<div class="ms-3 mb-2 align-middle">
 			<span class="fs-2 fw-bold">Mon profil</span>
@@ -14,6 +18,11 @@
 			<p><%= current_user.last_name %></p>
 			<p><%= current_user.email%></p>
 			<p><%= current_user.phone_number %></p>
+			<p>Changer mon avatar ?</p>
+			<%= form_tag user_avatars_path(@user), multipart: true do %>
+  		<%= file_field_tag :avatar %>
+  		<%= submit_tag "Mettre à jour" %>
+			<% end %>
 			<%= link_to 'Back', root_path, class: "btn-sm btn-outline-secondary" %>
 		</div>
 	</div>
@@ -29,18 +38,4 @@
       </tr>
     <% end %>
 </div>
-<% end %>
-
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
-<h3>Avatar actuel</h3>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
 <% end %>

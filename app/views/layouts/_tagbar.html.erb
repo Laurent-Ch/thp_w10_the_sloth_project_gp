@@ -1,0 +1,9 @@
+  <nav class="py-2 bg-light border-bottom border-top">
+    <div class="container d-flex justify-content-center">
+      <ul class="nav">
+        <% Tag.all.each do |tag|%>
+          <li class="btn-tag btn-sm btn-outline-warning mx-2"><a href="/tags/<%= tag.id %>" class="nav-link link-dark px-2 active" aria-current="page"><%= tag.title.capitalize %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
