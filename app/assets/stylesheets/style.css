@@ -95,7 +95,6 @@ margin: 30px;
 .picture-show-main {
   display: flex;
   margin-top: 30px;
-  margin-right: 20%;
 }
 
 .picture-show-main-thumb {
@@ -119,15 +118,19 @@ margin: 30px;
 .picture-show-main-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  width: 55%;
+  padding-left: 80px;
 }
 
 .picture-show-main-right {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 40px;
   flex-direction: column;
   justify-content: center;
+  padding-left: 30px;
+  width: 45%;
+  padding: 50px;
 }
 
 .picture-show-picture{
@@ -137,14 +140,26 @@ margin: 30px;
 
 .picture-show-more {
   display: flex;
-  margin-left: 15%;
-  margin-right: 20%;
   margin-top: 30px;
   margin-bottom: 50px;
 }
 .picture-show-more-desc {
 box-sizing: content-box;
 width: 70%;
+padding-left: 80px;
+padding-right: 50px;
+text-align: justify;
+}
+
+.picture-show-main-right-options {
+  display: flex;
+}
+
+p#picture-sold {
+  margin-top: 3px;
+}
+
+.picture-show-main-right-format {
 }
 
 .picture-show-more-related {
@@ -152,4 +167,6 @@ width: 70%;
   display: flex;
   flex-direction: column;
   width: 30%;
+  padding: 30px;
+
   }

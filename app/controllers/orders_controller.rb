@@ -24,7 +24,6 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @amount = session[:amount]*100
-    @user = current_user
 
     begin
       customer = Stripe::Customer.create({
