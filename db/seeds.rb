@@ -9,7 +9,7 @@ pictures_array = ["https://www.rd.com/wp-content/uploads/2021/04/GettyImages-863
 
 tags_array =['joueur', 'naturel', 'séducteur', 'jungle', 'prédateur', 'urbain', 'énergique', 'félix', 'perplexifiant', 'chaton']
 
-50.times do
+52.times do
     picture = Picture.create(
       title: Faker::Music::Hiphop.artist,
       body: Faker::Quote.famous_last_words,
