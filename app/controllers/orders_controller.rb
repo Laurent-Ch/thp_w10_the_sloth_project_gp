@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
-
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -22,25 +21,29 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @amount = session[:amount]*100
+    @stripe_amount = session[:amount]*100
 
     begin
       customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
+
       })
       charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
+      amount: @stripe_amount,
       description: "Achat d'un produit",
       currency: 'eur',
       })
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
+      @order = Order.create(user: current_user)
+      @cards = Card.where(user: current_user)
+      @cards.delete_all
+
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
       redirect_to new_order_path
     end
     # After the rescue, if the payment succeeded
-
   end
 
 
