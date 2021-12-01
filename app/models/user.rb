@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   has_many :cards
   has_many :pictures, through: :cards
+
+  has_one_attached :avatar
 end
