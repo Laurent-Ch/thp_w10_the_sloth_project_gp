@@ -153,3 +153,8 @@ width: 70%;
   flex-direction: column;
   width: 30%;
   }
+
+.btn-tag {
+  padding: 10px 24px;
+  border-radius: 12px;;
+}
