@@ -1,10 +1,54 @@
-<footer class="border-top">
-  <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 container  pt-2 mt-3">
-    <p class="col-md-4 mb-0 text-muted">© 2021 The Sloth Project, Inc</p>
 
-    <div class="nav col-md-4 justify-content-end">
-      <%= link_to "L'équipe", team_index_path, class: "btn btn-outline-danger me-2" %>
-      <%= link_to "FAQ", faq_index_path, class: "btn btn-outline-danger me-2" %>
+<footer class="page-footer font-small unique-color-dark border-top border-dark">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">The Sloth Project</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Flemme.</p>
+
+      </div>
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Liens utiles</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <%= link_to "L'Equipe", team_index_path, class: "nav-link text-secondary" %>
+        </p>
+        <p>
+          <%=link_to "FAQ", faq_index_path, class: "nav-link text-secondary" %>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> Les Paresseux, 24 rue des Dames, Paris, France</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> contact@theslothproject.com</p>
+      </div>
     </div>
   </div>
-  </footer>
+
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://the-sloth-project.herokuapp.com/"> The Sloth Project, Inc</a>
+  </div>
+
+</footer>

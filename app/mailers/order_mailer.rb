@@ -1,7 +1,7 @@
 class OrderMailer < ApplicationMailer
-  default from: 'contact@theslothproject.com'
+  default from: 'chamouleau.laurent@gmail.com'
 
-  def confirmation_order(order)
+  def confirmation_email(order)
     @order = order
     @user = @order.user
     @pictures = PicturesOrder.where(order: @order)
