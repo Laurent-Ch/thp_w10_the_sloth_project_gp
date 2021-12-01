@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: 'contact@theslothproject.com'
+  default from: 'chamouleau.laurent@gmail.com'
 
   def confirmation_email(order)
     @order = order
