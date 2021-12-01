@@ -1,6 +1,6 @@
-<%= render 'layouts/tagbar' %>
+<%= render 'layouts/tagbar'%>
 
-<div class="container my-4">
+<!-- <div class="container my-4">
 
 <div class="picture-index-content">
 <table>
@@ -24,14 +24,6 @@
 </table>
 </div>
 <br>
-
-<div class="row">
-    <% @tag.pictures.each do |picture| %>
-      <div class="col-3 p-0" style="height: 45vh">
-        <a href="<%= picture_url(picture) %>"><img src="<%= picture.image_url %>", style="width: 100%; height: 100%; object-fit: cover;"/>
-        </a>
-      </div>
-    <% end %>
 </div> -->
 
 <%= render 'pictures/cards' %>
