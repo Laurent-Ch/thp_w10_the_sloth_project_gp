@@ -22,28 +22,42 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @amount = session[:amount]*100
+    @stripe_amount = session[:amount]*100
 
     begin
       customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
+
       })
       charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
+      amount: @stripe_amount,
       description: "Achat d'un produit",
       currency: 'eur',
       })
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
+
+      #création de l'order (juste new)
+      @order = Order.new(user: current_user)
+
+      #création de pictureorder avant suppression du panier
+      @cards = Card.where(user: current_user)
+      @cards.each do |card|
+        PicturesOrder.create(order: @order, picture: card.picture)
+      end
+
+      #sauvegarde de l'order (déclenche l'envoi du mail)
+      @order.save
+
+      #suppression du panier
+      @cards.delete_all
+
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
       redirect_to new_order_path
     end
     # After the rescue, if the payment succeeded
-
   end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

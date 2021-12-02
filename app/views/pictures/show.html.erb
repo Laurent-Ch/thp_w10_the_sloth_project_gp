@@ -1,7 +1,7 @@
 
 <div class="picture-show-main">
   <div class="picture-show-main-left">
-    <img class="picture-show-main-picture" src=<%=@picture.image_url%> alt="another sloth" style="width: 612px; height: 408px; max-width:100%; max-height:100%; object-fit: cover;" >
+    <img id="myImg" src=<%=@picture.image_url%> alt="another sloth" style="width: 612px; height: 408px; max-width:100%; max-height:100%; object-fit: cover;" >
     <div class="picture-show-main-thumb">
     <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
     <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
@@ -16,24 +16,31 @@
     <h1><%=@picture.price%>€</h1>
     <div class="picture-show-main-right-options"
       <div class="picture-show-main-right-format">
-        <select id="pictures-format" name="pictures-format">
-          <option value="JPG">JPG</option>
-          <option value="RAW">RAW</option>
-          <option value="PDF">PDF</option>
+        <select id="pictures-qty" name="pictures-qty">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
         </select>
       </div>
       <br>
       <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
       <p id="picture-sold" style="font-size: 12px ; padding-top: 2px"><%=@picture_sold_count%> ventes déjà réalisées!</p>
       <br>
+      <div class="picture-show-tags">
       <% @tagspicture.each do |tagpicture| %>
-        <div>
-        <button class="btn mb-3 btn-sm btn-light"><%= tagpicture.tag.title %></button>
-        </div>
+        <button class="btn mb-3 btn-sm btn-light "><%= tagpicture.tag.title %></button>
         <% end %>
+        </div>
     </div>
   </div>
 </div>
+
 <div class="picture-show-more">
   <div class="picture-show-more-desc">
     <br>
@@ -41,8 +48,8 @@
       <h2>Proposé par <%=@picture.author%></h2>
       <p> Lorem officia sint in ut eu. Ea dolor aliqua occaecat eu amet irure dolor dolore. Commodo adipisicing culpa ullamco labore ipsum eu incididunt est eiusmod. Lorem et ipsum adipisicing incididunt aute nisi est elit labore.</p>
       <p> Nisi enim aute voluptate magna consectetur. Esse ex velit pariatur in est magna ut velit veniam tempor aliquip non Lorem dolor. Lorem magna do cupidatat velit cupidatat nisi minim exercitation tempor ad ipsum mollit.<p>
-      <p>Compteur : <%= Card.where(user: current_user, picture: @picture).length %></p>
-  </div>
+      <p>Occaecat aute consectetur exercitation culpa ullamco minim sint sit ipsum deserunt velit adipisicing dolore officia. Cupidatat et eu do occaecat cillum. Consectetur magna ipsum aliquip dolor labore qui consequat est ipsum labore aliqua labore.</p>
+        </div>
   <div class="picture-show-more-related">
       <br>
       <h1>Recommandations</h1>
@@ -54,3 +61,39 @@
 
 
 
+# <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  # <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  # <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  # <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>

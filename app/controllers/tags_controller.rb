@@ -8,7 +8,7 @@ class TagsController < ApplicationController
 
   # GET /tags/1 or /tags/1.json
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.friendly.find(params[:id])
     @tags = Tag.all
     @pictures = @tag.pictures
   end
@@ -62,7 +62,7 @@ class TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
-      @tag = Tag.find(params[:id])
+      @tag = Tag.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
