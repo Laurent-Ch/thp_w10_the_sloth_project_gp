@@ -15,4 +15,13 @@
     <%= yield %>
     <%= render 'layouts/footer'%>
   </body>
+  <script type="text/javascript">
+    const menuBurg = document.getElementById("myDropdown")
+    const menuBtn = document.getElementById("dropdownUser1")
+
+    menuBtn.onclick = function() {
+      menuBurg.classList.toggle('collapse')
+    };
+
+  </script>
 </html>
