@@ -26,9 +26,9 @@ tags_array =['joueur', 'naturel', 'séducteur', 'jungle', 'prédateur', 'urbain'
 end
 
   john = User.create(
-    first_name: "John",
+    first_name: "Sloth",
     last_name: "Doe",
-    email: "john.doe@yopmail.com",
+    email: "sloth.doe@yopmail.com",
     phone_number: "1234567890",
     password: "123456",
   )
