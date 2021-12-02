@@ -20,13 +20,13 @@
                             <tr>
                             <td><%= Card.where(user: current_user, picture: card.picture.id).length %></td>
                             <th scope="row"><%= card.picture.title %> <div></div>
-                            <img class="thumbnail" src=<%=card.picture.image_url%>     
+                            <img class="thumbnail" src=<%=card.picture.image_url%>
                             </th>
                             <td><%= card.picture.price %> euros</td>
                             <td><%= card.picture.price*Card.where(user: current_user, picture: card.picture.id).length %></td>
                             </tr>
                         <% end %>
-                         <tr>
+<tr>
                             <th scope="row"></th>
                             <td></td>
                             <td></td></td>
