@@ -111,11 +111,10 @@ Lucas O.
 Discover on **Heroku** : https://the-sloth-project.herokuapp.com/
 
 Connect through our test mate, **Sloth Doe**
-Email : "sloth.doe@yopmail.com"
-password : "123456"
+- Email : sloth.doe@yopmail.com
+- Very secret password : 123456
 
-Make sure you use a Stripe test-card
-Find some [here](https://stripe.com/docs/testing)
+Make sure you use a Stripe test-card - Find some [here](https://stripe.com/docs/testing)
 
 ---
 
@@ -128,5 +127,3 @@ Find some [here](https://stripe.com/docs/testing)
 
 
 ![](https://media4.giphy.com/media/2mjvhtIi5e0AE/giphy.gif)
-
-
