@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -35,8 +36,20 @@ class OrdersController < ApplicationController
       description: "Achat d'un produit",
       currency: 'eur',
       })
-      @order = Order.create(user: current_user)
+
+      #création de l'order (juste new)
+      @order = Order.new(user: current_user)
+
+      #création de pictureorder avant suppression du panier
       @cards = Card.where(user: current_user)
+      @cards.each do |card|
+        PicturesOrder.create(order: @order, picture: card.picture)
+      end
+
+      #sauvegarde de l'order (déclenche l'envoi du mail)
+      @order.save
+
+      #suppression du panier
       @cards.delete_all
 
       rescue Stripe::CardError => e
@@ -45,8 +58,6 @@ class OrdersController < ApplicationController
     end
     # After the rescue, if the payment succeeded
   end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
