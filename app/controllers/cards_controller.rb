@@ -6,7 +6,6 @@ class CardsController < ApplicationController
 
   def create
     @picture = Picture.find(params[:id])
-    
     @card = Card.create(user: current_user, picture: @picture)
     flash[:notice] = "Photo ajoutée au panier"
     redirect_to @picture
