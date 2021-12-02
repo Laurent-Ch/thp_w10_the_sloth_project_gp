@@ -12,27 +12,27 @@
 
   <div class="intro-index-content">
     <div class="intro-elements">
-      <i style="font-size: 6em; color: Tomato" class="fas fa-cat mb-3"></i>
-      <p>Marre des chatons mignons ? Bienvenue dans le monde des paresseux</p>
-      <i>“Dans le monde idéal, les paresseux donneront des cours de relaxation.”</i>
+      <i style="font-size: 3em; color: #335C67" class="fas fa-cat mb-3"></i>
+      <p><b>Marre des chatons mignons ?<br> Bienvenue chez les paresseux.</b></p>
+      <p><i>“Dans un monde idéal, les paresseux donneront des cours de relaxation.”</i></p>
     </div>
 
     <div class="intro-elements">
-      <i style="font-size: 6em; color: Tomato" class="fas fa-camera-retro mb-3"></i>
-      <p>De Tombuktu à Paris, des photographies d'exception</p>
-      <i>Qui ont su saisir nos paresseux sur l'instant</i>
+      <i style="font-size: 3em; color: #335C67" class="fas fa-camera-retro mb-3"></i>
+      <p><b>De Tombuktu à Paris, des photographies d'exception</b></p>
+      <p><i>Qui ont su saisir nos paresseux sur l'instant</i></p>
     </div>
 
     <div class="intro-elements">
-      <i style="font-size: 6em; color: Tomato" class="fas fa-bed mb-3"></i>
-      <p>Une équipe de flemmards à votre service</p>
-      <i>Pour le meilleur et pour le pire </i>
+      <i style="font-size: 3em; color: #335C67" class="fas fa-bed mb-3"></i>
+      <p><b>Une équipe de flemmards à votre service</b></p>
+      <p><i>Pour le meilleur et pour le pire</i></p>
     </div>
 
     <div class="intro-elements">
-      <i style="font-size: 6em; color: Tomato" class="far fa-thumbs-up mb-3"></i>
-      <p>Selectionnez, achetez : simple comme bonjour</p>
-      <i>The Sloth Project, le e-commerce aussi flemmarde que vous </i>
+      <i style="font-size: 3em; color: #335C67" class="far fa-thumbs-up mb-3"></i>
+      <p><b>Selectionnez, achetez : simple comme bonjour</b></p>
+      <p><i>The Sloth Project, le e-commerce aussi flemmarde que vous</i></p>
     </div>
   </div>
 </div>
@@ -40,32 +40,39 @@
   <div class="banner-lg-2">
   <div>
     <h2 class="display-4 txt-outline">On nage dans le succès</h2>
-    <%= link_to 'Notre équipe', team_index_path, class: "btn btn-primary btn-hero-team btn-xl" %>
+    <%= link_to 'Notre équipe', team_index_path, class: "btn btn-primary btn-hero-team btn-xl button-link-home" %>
   </div>
 </div>
 
 <div class="container mt-5 ">
   <div class="feedback-elements">
-    <h3>Un service plésbiscité par une communauté de passionnés</h3>
-    <i style="font-size: 3em; color: gold" class="fas fa-star"></i>
-    <i style="font-size: 3em; color: gold"class="fas fa-star"></i>
-    <i style="font-size: 3em; color: gold" class="fas fa-star"></i>
-    <i style="font-size: 3em; color: gold"class="fas fa-star"></i>
-    <i style="font-size: 3em; color: gold" class="fas fa-star"></i>
-    <h4>Sur le forum slothgeek.org</h4>
-  </div>
+    <h4>Un service plésbiscité par une communauté de passionnés</h4><br>
+    <div class="feedback-elements-star">
+    <i style="font-size: 3em; color: #335C67" class="fas fa-star"></i>
+    <i style="font-size: 3em; color: #335C67"class="fas fa-star"></i>
+    <i style="font-size: 3em; color: #335C67" class="fas fa-star"></i>
+    <i style="font-size: 3em; color: #335C67"class="fas fa-star"></i>
+    <i style="font-size: 3em; color: #335C67" class="fas fa-star"></i>
+    </div>
+    <h5>Sur le forum slothgeek.org</h5><br>
+    <div class="line"></div>
+    <h4>Ils ont sauté le pas !</h4>
+    <h5>Et vous ?</h5>
 
-  <div class="feedback-elements">
-    <i style="font-size: 6em; color: tomato" class="fas fa-skating"></i>
-    <h1>Ils ont sauté le pas !</h1>
-    <h4>Et vous ?</h4>
+  </div>
     <blockquote class="blockquote">
-    <p>"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore !"</p>
-    <footer class="blockquote-footer"><%= @users.sample.first_name%> <%= @users.sample.last_name%></footer>
+      <a href="https://github.com/Laurent-Ch"><img src="https://c.tenor.com/e6vxTNuu-ukAAAAC/zootopia-sloth.gif" class="img-fluid rounded-circle gif-home" alt="sloth2"></a>
+      <div class="blockquote-text">
+        <p style="font-size: 20px; width: 500px;>">"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore !"</p>
+        <footer class="blockquote-footer">Jean-Pa Resseux</footer>
+      </div>
     </blockquote>
-      <blockquote class="blockquote">
-    <p>"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore !"</p>
-    <footer class="blockquote-footer"><%= @users.sample.first_name%> <%= @users.sample.last_name%></footer>
+    <blockquote class="blockquote">
+      <a href="https://github.com/Laurent-Ch"><img src="https://c.tenor.com/dmYZ0fcRAScAAAAM/flash-sloth.gif" class="img-fluid rounded-circle gif-home" alt="sloth2"></a>
+      <div class="blockquote-text">
+        <p style="width: 500px;>">"Une expérience client incroyable, ma photo de paresseux n'est toujours pas imprimée mais j'adore !"</p>
+        <footer class="blockquote-footer"><%= @users.sample.first_name%> <%= @users.sample.last_name%></footer>
+      </div>
     </blockquote>
   </div>
 </div>
