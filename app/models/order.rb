@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-after_create :confirm_order
+after_save :confirm_order
 
 belongs_to :user
 has_many :pictures_orders

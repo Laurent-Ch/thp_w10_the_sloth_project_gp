@@ -12,8 +12,8 @@
     <p>
       Tu retrouveras tes photos ici :
 
-      <% @pictures.each do |picture|%>
-      <h6><a class="font-weight-light text-decoration: none" href=<%= picture.image_url %>><%= picture.title %></a>
+      <% @pictures.each do |p|%>
+        <h6><a class="font-weight-light text-decoration: none" href="<%= p.picture.image_url %>"><%= p.picture.title %></a></h6>
       <% end %>
     </p>
     <p> À très vite sur <%= link_to "The Sloth Project", @url %> !</p>
