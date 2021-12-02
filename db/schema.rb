@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_100343) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["picture_id"], name: "index_cards_on_picture_id"
+    t.index ["quantity"], name: "index_cards_on_quantity"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 

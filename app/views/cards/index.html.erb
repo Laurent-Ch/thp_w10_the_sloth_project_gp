@@ -47,6 +47,7 @@ Prix selon quantité %>
                             <td><img class="thumbnail ml-5 rounded-circle" src="<%= pic.image_url%>"></td>
                             <td> <%= pic.price %>€</td>
                             <td> <%= value * pic.price %>€</td>
+                            <td><%= link_to "Supprimer", card_path(key), :class => "btn btn-outline-dark btn-l", :method => 'DELETE', :data => {:confirm => 'Veux-tu vraiment supprimer cet article ?'} %></td>
                             </tr>
                             <% end %>
                             <% end %>
