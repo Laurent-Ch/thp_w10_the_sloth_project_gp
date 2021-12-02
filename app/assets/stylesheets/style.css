@@ -194,7 +194,9 @@ text-align: justify;
 
 .picture-show-main-right-options {
   display: flex;
+  flex-direction: column;
 }
+
 
 p#picture-sold {
   margin-top: 3px;
