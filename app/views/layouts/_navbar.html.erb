@@ -1,28 +1,37 @@
-<header class="p-3 bg-light text-dark">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <nav class="d-flex navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
             <a href="/" class="d-flex align-items-center mb-2 me-2 mb-lg-0 text-dark text-decoration-none">
               <span class="fs-4">The Sloth Project</span>
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <%= link_to "Nos Photos", pictures_path, class: "nav-link text-secondary" %>
+              <%= link_to "Nos Photos", pictures_path, class: "nav-link link-dark px-3 border-nav" %>
             </ul>
 
             <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-2">
-              <% if user_signed_in? %>
-                <%= link_to "Profil", user_path(current_user.id), class: "btn btn-primary me-2" %>
-                <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-danger me-2" %>
-                <a href="/cards" class="btn btn-outline-dark me-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 17 17">
+            <% if user_signed_in? %>
+            <a href="/cards" class="btn btn-outline-dark me-2">Mon Panier&nbsp;
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-cart2" viewBox="0 2 17 17">
                     <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                   </svg>
                 </a>
+              <div class="dropdown">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <%if current_user.avatar.attached?%>
+                        <%= image_tag current_user.avatar, alt: 'avatar', width: "32", height: "32", class: "rounded-circle border" %>
+                      <%else%>
+                        <img src="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?b=1&k=20&m=1300845620&s=170667a&w=0&h=JbOeyFgAc6-3jmptv6mzXpGcAd_8xqkQa_oUK2viFr8=", alt="avatar", width="32", height="32", class="rounded-circle border">
+                      <%end%>
+                </a>
+                <div id="myDropdown" class="dropdown-content collapse" >
+                  <%= link_to "Profil", user_path(current_user.id), class: "dropdown-item" %>
+                  <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+                </div>
+              </div>
               <% else %>
                 <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-outline-primary me-2" %>
                 <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary me-2" %>
               <% end %>
             </div>
           </div>
-      </div>
-</header>
+          </nav>
