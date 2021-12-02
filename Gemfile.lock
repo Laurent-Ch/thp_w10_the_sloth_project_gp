@@ -301,4 +301,8 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
+<<<<<<< HEAD
+   2.2.31
+=======
    2.2.29
+>>>>>>> main
