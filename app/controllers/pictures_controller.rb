@@ -16,6 +16,11 @@ class PicturesController < ApplicationController
     if !picture_sold.nil?
       @picture_sold_count = picture_sold.length
     end
+    @pictures = Picture.all
+    @picture_sample = @pictures.sample
+    @picture_sample2 = @pictures.sample
+    @picture_sample3 = @pictures.sample
+
   end
 
   # GET /pictures/new
@@ -74,5 +79,5 @@ class PicturesController < ApplicationController
     def picture_params
       params.fetch(:picture, {})
     end
-  
+
 end

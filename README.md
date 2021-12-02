@@ -2,23 +2,23 @@
 
 
 # The Sloth Project
-_A e-commerce platform dedicated to Sloth_
+_An e-commerce platform dedicated to sloths_
 
-## Table des matières
+## Table of contents
 
 - [About TSP](#a-few-words-about-the-sloth-project)
 - [Main features](#main-features)
-- [API & specific Gems](#api-&-specific-gems)
+- [API & specific gems](#api-&-specific-gems)
 - [The team](#the-sloth-team)
-- [Test our platform !](#test-our-platform-online)
+- [Test our platform!](#test-our-platform-online)
 
 ---
 
 ## A few words about The Sloth Project
 
-After 2 months of full-stack classes through The Hacking Project, we are asked to build a e-commerce platform, enabling user to buy cats pictures.
+After 2 months of full-stack classes at The Hacking Project, we've been asked to build an e-commerce platform allowing users to buy cat pictures.
 
-We got crazy about sloths and their fascinating universe, and went for it instead.
+We got crazy about sloths and their fascinating universe and went for it instead.
 
 ![](https://mvistatic.com/photosmvi/2018/03/01/P1D3391693G.jpg)
 
@@ -35,8 +35,8 @@ We got crazy about sloths and their fascinating universe, and went for it instea
 ### E-commerce classics
 - Items index
 - Items profile
-- Create a card
-- Confirm the card & pay
+- Create a shopping cart
+- Validate it & pay
 
 ### Mailing
 - When creating an account
@@ -45,8 +45,8 @@ We got crazy about sloths and their fascinating universe, and went for it instea
 ### Some surprises
 - Displaying bought items on my profile
 - Recommended items
-- Tags & sorting out feature
-- Funny looking team page
+- Tags & sorting out features
+- Light-hearted team page
 - FAQs
 
 ---
@@ -65,7 +65,7 @@ _Online paiement service_
 
 Documentation available [here](https://stripe.com/docs/api?lang=ruby).
 
-### We also added a couple of useful gem
+### We also added a couple of useful gems
 
 - Devise
 
@@ -93,7 +93,7 @@ Mathias P.
 > Vinyl & Front lover
 
 Violette M.
-> One of THP last female student
+> One of THP last female students
 
 Laurent C.
 > Debugging everything with talent
@@ -102,13 +102,13 @@ Antoine O.
 > Browsing the web & France
 
 Lucas O.
-> A great add one to the team
+> A great add-on to the team
 
 ---
 
 ## Test our platform online
 
-Discover on **Heroku** : https://the-sloth-project.herokuapp.com/
+Discover it on **Heroku** : https://the-sloth-project.herokuapp.com/
 
 Connect through our test mate, **Sloth Doe**
 - Email : sloth.doe@yopmail.com
@@ -122,8 +122,8 @@ Make sure you use a Stripe test-card - Find some [here](https://stripe.com/docs/
 
 - More about [The Hacking Project](https://www.thehackingproject.org/)
 - Inspiration for our website [here](https://www.gettyimages.fr/) & [there](https://unsplash.com/)
-- More about [Sloth fascinating life](https://www.worldwildlife.org/species/sloth)
-- Cuttest Sloth [ever](https://www.youtube.com/watch?v=aaqzPMOd_1g)
+- More about [sloths' fascinating life](https://www.worldwildlife.org/species/sloth)
+- Cuttest sloth [ever](https://www.youtube.com/watch?v=aaqzPMOd_1g)
 
 
 ![](https://media4.giphy.com/media/2mjvhtIi5e0AE/giphy.gif)
