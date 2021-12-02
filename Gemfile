@@ -71,5 +71,5 @@ gem 'devise'
 gem 'stripe'
 gem 'rubocop'
 gem 'rubocop-rails'
-
+gem 'friendly_id'
 gem 'nokogiri'
