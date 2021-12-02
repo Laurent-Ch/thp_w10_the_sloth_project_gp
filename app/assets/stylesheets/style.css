@@ -1,3 +1,21 @@
+@import url('//fonts.googleapis.com/css?family=Lato');
+
+
+*/:root{
+  --bs-primary:#335C67;
+  --bs-secondary:#FFF3B0;
+  --bs-success:#198754;
+  --bs-info:#0dcaf0;
+  --bs-warning:#E09F3E;
+  --bs-danger:#540B0E;
+  --bs-light:#f8f9fa;
+  --bs-dark:#212529;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 /* Navbar */
 navbar {
   display: flex;
