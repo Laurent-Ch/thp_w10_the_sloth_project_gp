@@ -368,3 +368,11 @@ nav > div > ul > li > a {
     bottom:2px; /*Change this to increase/decrease distance*/
     border-bottom: 2px solid #000;  
 }
+
+.fixed-top-2 {
+  margin-top: 0;
+}
+
+body {
+  padding-top: 56px;
+}
