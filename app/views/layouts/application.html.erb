@@ -6,11 +6,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+     <!-- Google font -->
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
     <%= javascript_include_tag 'application' %>
     <script src="https://kit.fontawesome.com/1a95bb585d.js" crossorigin="anonymous"></script>
   </head>
   <%= render 'layouts/navbar'%>
-  <body>
+  <body class="bg-light">
     <%= render 'layouts/flash'%>
     <%= yield %>
     <%= render 'layouts/footer'%>
