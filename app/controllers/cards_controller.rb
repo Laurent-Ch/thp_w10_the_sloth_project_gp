@@ -7,7 +7,11 @@ class CardsController < ApplicationController
   def create
     @picture = Picture.find(params[:id])
     @card = Card.create(user: current_user, picture: @picture)
+    flash[:notice] = "Photo ajoutée au panier"
+    redirect_to @picture
   end
+
+
 
   def index
     @cards = Card.where(user: current_user)
@@ -24,7 +28,10 @@ class CardsController < ApplicationController
     return @total_price
   end
 
+
+
 end
+
 
 
 
