@@ -9,11 +9,19 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User.find(params[:id])
-    # @pictures = @user.pictures
+
+    #array de tous les orders passés par l'utilisateur
     @orders = Order.where(user: @user)
+
+    #j'incrémente mon tableau de photo qui me servira dans ma partial
     @picturesordered = []
     @orders.each do |order|
-      @picturesordered << PicturesOrder.where(order: order)
+      #array de tous les picturesorder correspondant à mes orders
+      @pictures = PicturesOrder.where(order: order)
+        @pictures.each do |pic|
+          @picture = pic.picture
+          @picturesordered << @picture
+        end
     end
   end
 
