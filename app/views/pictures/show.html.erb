@@ -12,7 +12,7 @@
       <p class="picture-show-body"><%=@picture.body%></p>
     </div>
     <h1><%=@picture.price%>€</h1>
-    <div class="picture-show-main-right-options"
+    <div class="picture-show-main-right-options">
       <div class="picture-show-main-right-format">
         <select id="pictures-qty" name="pictures-qty">
         <option value=1>1</option>
@@ -28,11 +28,11 @@
       </div>
       <br>
       <% if user_signed_in? %>
-      <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
+      <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-success" %>
       <% else %>
-      <%= button_to "Ajouter à mon panier", new_user_session_path, class: "btn btn-danger" %>
+      <%= button_to "Ajouter à mon panier", new_user_session_path, class: "btn btn btn-success" %>
       <% end %>
-      <p id="picture-sold" style="font-size: 12px ; padding-top: 2px"><%=@picture_sold_count%> ventes déjà réalisées!</p>
+      <p id="picture-sold" style="font-size: 12px ; padding-top: 2px"><%=@picture_sold_count%> fois déjà achetée!</p>
       <br>
       <div class="picture-show-tags">
       <% @tagspicture.each do |tagpicture| %>
