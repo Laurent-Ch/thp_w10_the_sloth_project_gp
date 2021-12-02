@@ -1,3 +1,24 @@
+<%# Quantité
+Nom de produit
+Prix unitaire
+Prix selon quantité %>
+
+<% if false %>
+
+<% @picture_counter_hash.each do |key, value|%>
+    <% @current_pics = Picture.where(id: key) %>
+    <div>Quantité: <%= value %></div>
+    <% @current_pics.each do |pic| %>
+        <img src="<%= pic.image_url%>">
+        <%= pic.price %>
+        <%= pic.title%>
+    <% end %>
+<% end %>
+
+<% end %>
+
+
+
 <div class="container">
     <h1>Mon panier</h1>
     <br/>
@@ -9,22 +30,27 @@
                         <tr>
                         <th scope="col">Quantité</th>
                         <th scope="col">Nom de produit</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Prix unitaire</th>
                         <th scope="col">Prix selon quantité</th>
                         <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% @cards.uniq.each do |card| %>
+                        <% @picture_counter_hash.each do |key, value|%>
+                        <% @current_pics = Picture.where(id: key) %>
                             <tr>
-                            <td><%= Card.where(user: current_user, picture: card.picture.id).length %></td>
-                            <th scope="row"><%= card.picture.title %> <div></div>
-                            <img class="thumbnail" src=<%=card.picture.image_url%>
+                            <td> <%= value %> </td>
+                            <% @current_pics.each do |pic| %>
                             </th>
-                            <td><%= card.picture.price %> euros</td>
-                            <td><%= card.picture.price*Card.where(user: current_user, picture: card.picture.id).length %></td>
+                            <td><%= pic.title%></td>
+                            <td><img class="thumbnail ml-5 rounded-circle" src="<%= pic.image_url%>"></td>
+                            <td> <%= pic.price %>€</td>
+                            <td> <%= value * pic.price %>€</td>
                             </tr>
-                        <% end %>
+                            <% end %>
+                            <% end %>
+
                          <tr>
                             <th scope="row"></th>
                             <td></td>
@@ -42,8 +68,3 @@
             <%=link_to 'Passer la commande', new_order_path, class: 'btn btn-outline-dark'%>
         </div>
 </div>
-
-<%if @cards.size <= 1%>
-<%=u = Card.create(user: current_user, picture: @picture)%>
-<%else%>
-<%end%>

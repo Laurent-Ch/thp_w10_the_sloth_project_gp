@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_100343) do
   create_table "cards", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "picture_id"
+    t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["picture_id"], name: "index_cards_on_picture_id"
