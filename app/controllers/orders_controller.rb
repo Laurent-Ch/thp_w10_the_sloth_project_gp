@@ -37,14 +37,17 @@ class OrdersController < ApplicationController
       currency: 'eur',
       })
 
-      #création de l'order
-      @order = Order.create(user: current_user)
+      #création de l'order (juste new)
+      @order = Order.new(user: current_user)
 
       #création de pictureorder avant suppression du panier
       @cards = Card.where(user: current_user)
       @cards.each do |card|
         PicturesOrder.create(order: @order, picture: card.picture)
       end
+
+      #sauvegarde de l'order (déclenche l'envoi du mail)
+      @order.save
 
       #suppression du panier
       @cards.delete_all

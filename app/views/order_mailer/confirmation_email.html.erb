@@ -5,7 +5,7 @@
   </head>
   <body>
     <div class="container-fluid">
-    <h1>Ô <%= @user.first_name %>, merci pour ton achat</h1>
+    <h1>Ô <%= @user.first_name %>, merci pour ta commande n<%= @order.id %></h1>
     <p>
       Tu viens de réaliser une commande sur <%= link_to "The Sloth Project", @url %> et nous t'en remercions &#128536;
     </p>
