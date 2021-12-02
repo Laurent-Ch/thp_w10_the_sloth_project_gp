@@ -1,11 +1,9 @@
 
 <div class="picture-show-main">
   <div class="picture-show-main-left">
-    <img id="myImg" src=<%=@picture.image_url%> alt="another sloth" style="width: 612px; height: 408px; max-width:100%; max-height:100%; object-fit: cover;" >
+    <img id="myImg" src=<%=@picture.image_url%> alt="<%=@picture.title%>" style="width: 612px; height: 408px; max-width:100%; max-height:100%; object-fit: cover;" >
     <div class="picture-show-main-thumb">
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
-    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth" style="width: 122px; height: 81px; object-fit: cover;" >
+    <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="<%=@picture.title%>" style="width: 122px; height: 81px; object-fit: cover;" >
     </div>
   </div>
   <div class="picture-show-main-right">
@@ -29,7 +27,11 @@
         </select>
       </div>
       <br>
+      <% if user_signed_in? %>
       <%= button_to "Ajouter à mon panier", {:controller => "cards", :action => 'create', :id => @picture.id}, :method => :post, class: "btn btn-danger" %>
+      <% else %>
+      <%= button_to "Ajouter à mon panier", new_user_session_path, class: "btn btn-danger" %>
+      <% end %>
       <p id="picture-sold" style="font-size: 12px ; padding-top: 2px"><%=@picture_sold_count%> ventes déjà réalisées!</p>
       <br>
       <div class="picture-show-tags">
@@ -53,9 +55,7 @@
   <div class="picture-show-more-related">
       <br>
       <h1>Recommandations</h1>
-      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
-      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
-      <img class="picture-show-main-thumb-1" src=<%=@picture.image_url%> alt="another sloth">
+      <%= render 'reco' %>
     </div>
 </div>
 
